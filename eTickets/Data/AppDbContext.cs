@@ -15,7 +15,8 @@ namespace eTickets.Data
         {
 
         }
-
+        public DbSet<IdentityRole> AspNetRoles { get; set; }
+        public DbSet<IdentityRole> AspNetUsers { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Actor_Movie>().HasKey(am => new
@@ -29,7 +30,8 @@ namespace eTickets.Data
             modelBuilder.Entity<Actor_Movie>().HasOne(m => m.Movie).WithMany(am => am.Actors_Movies).HasForeignKey(m => m.MovieId);
             modelBuilder.Entity<Actor_Movie>().HasOne(m => m.Actor).WithMany(am => am.Actors_Movies).HasForeignKey(m => m.ActorId);
             modelBuilder.Entity<IdentityRole>().HasData(new IdentityRole { Name = "Admin", NormalizedName = "ADMIN" },
-                new IdentityRole { Name = "User", NormalizedName = "USER" } );
+                 new IdentityRole { Name = "User", NormalizedName = "USER" });
+
 
 
             base.OnModelCreating(modelBuilder);
