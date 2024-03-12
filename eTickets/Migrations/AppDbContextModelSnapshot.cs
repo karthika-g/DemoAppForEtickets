@@ -47,15 +47,15 @@ namespace eTickets.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e1d8ba16-7ef2-4ec1-8aab-0548a6332e16",
-                            ConcurrencyStamp = "38deec1a-160d-4720-8960-5b21b79d9a96",
+                            Id = "e445fdc8-4efc-49cb-8e68-dfaf16203959",
+                            ConcurrencyStamp = "ddc0fa42-2917-4902-a4cb-3cc3fc00c9f7",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "2c5ee828-708f-40fc-ba79-adf6c2bc87b1",
-                            ConcurrencyStamp = "d5504266-d189-453a-a394-52d0fbeed0b8",
+                            Id = "f451dc95-4bf2-4def-9d34-6b4c8f3ad1bd",
+                            ConcurrencyStamp = "1e55b302-7ddd-44ff-8ec7-9ba0e8e0aae7",
                             Name = "User",
                             NormalizedName = "USER"
                         });
