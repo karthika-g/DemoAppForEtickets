@@ -81,5 +81,10 @@ namespace eTickets.Controllers
 
             return View("OrderCompleted");
         }
+
+        public async Task<IActionResult> MakePayment()
+        {          
+            return View("PaymentPage");
+        }
     }
 }

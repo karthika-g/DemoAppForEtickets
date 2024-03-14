@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace eTickets
@@ -73,6 +74,20 @@ namespace eTickets
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            // Add middleware to show the splash screen
+            app.Use(async (context, next) =>
+            {
+                // Check if the request path is for the splash screen
+                if (context.Request.Path == "/LoadingScreen")
+                {
+                    await context.Response.WriteAsync(File.ReadAllText(Path.Combine("D:\\BITS\\complete-ecommerce-aspnet-mvc-application-master\\eTickets\\Views\\Account", "LoadingScreen.cshtml")));
+                }
+                else
+                {
+                    await next(); // Continue processing the request pipeline
+                }
+            });
+
 
             app.UseRouting();
             app.UseSession();
